@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Calculadora Tempo Recarga</string>
+    <string name="splash_logo_desc">Logo da Calculadora</string>
+    <string name="login_hint_user">Usuário</string>
+    <string name="login_hint_password">Senha</string>
+    <string name="login_hint_forgot_password">Esqueceu sua senha?</string>
+    <string name="btn_login">Entrar</string>
+    <string name="text_view_login">Bemvindo</string>
+    <string name="text_view_fechar">Fechar</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="main_hint_capacidade_bateria">Capacidade da bateria (kW)</string>
+    <string name="main_hint_carga_atual_bateria">Carga atual da bateria (%)</string>
+    <string name="main_hint_corrente_carregamento">Corrente de carregamento (8A / 10A / 16A)</string>
+    <string name="main_hint_tensao_entrada">Tensão de Entrada (110V / 220V)</string>
+</resources>
