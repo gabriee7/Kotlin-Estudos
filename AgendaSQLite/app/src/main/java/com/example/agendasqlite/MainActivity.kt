@@ -3,10 +3,7 @@ package com.example.agendasqlite
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.agendasqlite.databinding.ActivityMainBinding
 import com.example.agendasqlite.model.Contato
 
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         binding.ListView.setOnItemClickListener{ _, _, position, _ ->
             binding.textViewID.setText("ID: ${this.listaContatos[position].id}")
             binding.editNome.setText(this.listaContatos[position].nome)
-            binding.editTelefone.setText(this.listaContatos[position].telefone)
+            binding.editTelefone.setText(this.listaContatos[position].celular)
             binding.editEmail.setText(this.listaContatos[position].email)
             pos = position
         }

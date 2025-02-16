@@ -8,11 +8,12 @@ import com.example.agendasqlite.model.Contato
 
 class DBHelper(context: Context):
     SQLiteOpenHelper(context, "database.db", null, 1) {
-        var sql = arrayOf(
-            "CREATE TABLE contatos (id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "nome TEXT, celular TEXT, email TEXT",
-            "INSERT INTO contatos (nome, celular, email) VALUES ('Zé da mercearia', '28 00000-0000', 'zezinho@agenda.com')",
-            "INSERT INTO contatos (nome, celular, email) VALUES ('Emergência', '192', 'emergencia@agenda.com')")
+    var sql = arrayOf(
+        "CREATE TABLE contatos (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "nome TEXT, celular TEXT, email TEXT)",
+        "INSERT INTO contatos (nome, celular, email) VALUES ('Zé da mercearia', '28 00000-0000', 'zezinho@agenda.com')",
+        "INSERT INTO contatos (nome, celular, email) VALUES ('Emergência', '192', 'emergencia@agenda.com')"
+    )
 
     override fun onCreate(db: SQLiteDatabase) {
         sql.forEach {
@@ -36,15 +37,15 @@ class DBHelper(context: Context):
             do {
                 val idIndex = cursor.getColumnIndex("id")
                 val nomeIndex = cursor.getColumnIndex("nome")
-                val telefoneIndex = cursor.getColumnIndex("telefone")
+                val celularIndex = cursor.getColumnIndex("celular")
                 val emailIndex = cursor.getColumnIndex("email")
 
                 val id = cursor.getInt(idIndex)
                 val nome = cursor.getString(nomeIndex)
-                val telefone = cursor.getString(telefoneIndex)
+                val celular = cursor.getString(celularIndex)
                 val email = cursor.getString(emailIndex)
 
-                list.add(Contato(id, nome, telefone, email))
+                list.add(Contato(id, nome, celular, email))
             }while (cursor.moveToNext())
         }
 
@@ -52,12 +53,12 @@ class DBHelper(context: Context):
         return list
     }
 
-    fun insertContato(nome: String, telefone: String, email: String): Long {
+    fun insertContato(nome: String, celular: String, email: String): Long {
         val db = this.writableDatabase
         val contentValues = ContentValues()
 
         contentValues.put("nome", nome)
-        contentValues.put("telefone", telefone)
+        contentValues.put("celular", celular)
         contentValues.put("email", email)
 
         val res = db.insert("contatos", null, contentValues)
@@ -66,12 +67,12 @@ class DBHelper(context: Context):
         return res
     }
 
-    fun updateContato(id: Int, nome: String, telefone: String, email: String): Int{
+    fun updateContato(id: Int, nome: String, celular: String, email: String): Int{
         val db = this.writableDatabase
         val contentValues = ContentValues()
 
         contentValues.put("nome", nome)
-        contentValues.put("telefone", telefone)
+        contentValues.put("celular", celular)
         contentValues.put("email", email)
 
         val res = db.update("contatos", contentValues, "id=?", arrayOf(id.toString()))
