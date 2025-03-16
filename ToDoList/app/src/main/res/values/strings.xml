@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="text_editar">Editor</string>
+    <string name="text_data_vencimento">Data de Vencimento</string>
+    <string name="text_descricao">Descrição</string>
+    <string name="text_selecione_data">Selecione uma data</string>
+    <string name="text_cancelar">Cancelar</string>
+    <string name="text_excluir">Excluir</string>
+    <string name="text_alterar">Alterar</string>
+    <string name="text_titulo">Título</string>
+    <string name="text_salvar">Salvar</string>
+    <string name="text_incluir">Incluir</string>
+    <string name="text_tarefas">Tarefas</string>
+    <string name="text_tarefas_concluidas">Tarefas concluídas</string>
+    <string name="text_adicionar_tarefa">Adicionar tarefa</string>
+    <string name="text_voltar">Voltar</string>
+</resources>
